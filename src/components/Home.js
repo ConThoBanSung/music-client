@@ -10,8 +10,8 @@ const Home = () => {
     const fetchTopTracks = async () => {
       try {
         // Replace with your client ID and secret
-        const clientId = 'e2b570129b0842629b774e17aef4f522';
-        const clientSecret = '721fc818e29a4198a6ae415f0707802f';
+        const clientId = '5997196b69fb40a8941af357708d6e40';
+        const clientSecret = '379337f2991f4b729c2587f5b30ebe4a';
 
         // Get Spotify access token
         const authResponse = await axios.post('https://accounts.spotify.com/api/token', null, {
