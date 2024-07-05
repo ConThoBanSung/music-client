@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Search from './components/Search';
 import MusicPlayer from './components/MusicPlayer';
 import Profile from './components/Profile';
-import Upload from './components/Upload';
+import Playlist from './components/Playlist';
 import Login from './components/Login';
 import Register from './components/Register';
 import { MusicPlayerProvider } from './MusicPlayerContext';
@@ -64,7 +64,7 @@ const App = () => {
               <Route path="/search" element={<Search />} />
               <Route path="/music-player" element={<MusicPlayer />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/upload" element={<Upload />} />
+              <Route path="/playlist" element={<Playlist />} />
               <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
               <Route path="/register" element={<Register />} />
             </Routes>
