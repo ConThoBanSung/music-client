@@ -50,7 +50,7 @@ const Home = () => {
         <li><Link to="/search">Search</Link></li>
         <li><Link to="/music-player">Music Player</Link></li>
         <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/upload">Upload</Link></li>
+        <li><Link to="/upload">Playlists</Link></li>
       </ul>
       <div className="top-songs">
         <h3>Top Songs</h3>
