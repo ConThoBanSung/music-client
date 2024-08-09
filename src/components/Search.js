@@ -26,7 +26,7 @@ const Search = () => {
       title: result.snippet.title,
       description: result.snippet.description,
       thumbnail: result.snippet.thumbnails.default.url,
-      url: `https://backend-e154.onrender.com/audio/${result.id.videoId}`
+      url: `https://www.youtube.com/watch?v=${result.id.videoId}`
     });
     navigate(`/search`);
   };
