@@ -1,11 +1,11 @@
 /* Profile.css */
-.container {
+.container-profile {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 600px;
+    /* max-width: 600px; */
     box-sizing: border-box;
   }
   h2, h3 {

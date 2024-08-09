@@ -43,17 +43,29 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h2>Welcome to SecGei Music</h2>
+    <div className="container-home">
+      <h2>Welcome to SoundTiFy Music</h2>
       <p>Explore the best music collection.</p>
       <ul className="nav-links">
-        <li><Link to="/search">Search</Link></li>
         <li><Link to="/music-player">Music Player</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/upload">Playlists</Link></li>
+        <li><Link to="/upload">Upload</Link></li>
       </ul>
       <div className="top-songs">
         <h3>Top Songs</h3>
+        <div className="songs-list">
+          {topSongs.map((song, index) => (
+            <div key={index} className="song-item">
+              <img src={song.images[0].url} alt={song.name} />
+              <div className="song-details">
+                <p>{song.name}</p>
+                <p>{song.artists.map(artist => artist.name).join(', ')}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="top-songs">
+        <h3>Recent play</h3>
         <div className="songs-list">
           {topSongs.map((song, index) => (
             <div key={index} className="song-item">

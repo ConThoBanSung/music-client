@@ -49,7 +49,7 @@ const Search = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-search">
       <h1>Welcome to SecGei Music</h1>
       <p>Explore the best music collection.</p>
       <div className="search-bar">

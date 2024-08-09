@@ -1,7 +1,13 @@
-.container {
-    text-align: center;
-    margin-top: 20px;
-  }
+.container-search {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
   
   .search-bar {
     display: flex;
@@ -11,7 +17,7 @@
   }
   
   .search-bar input[type="text"] {
-    width: 300px;
+    width: 150%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;

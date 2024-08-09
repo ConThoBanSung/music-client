@@ -78,15 +78,15 @@ const Profile = () => {
   };
 
   if (loading) {
-    return <div className="container">Loading...</div>;
+    return <div className="container-profile">Loading...</div>;
   }
 
   if (!user) {
-    return <div className="container">User not found</div>;
+    return <div className="container-profile">User not found</div>;
   }
 
   return (
-    <div className="container">
+    <div className="container-profile">
       <h2>Profile</h2>
       <p><strong>Username:</strong> {user.username}</p>
       <p><strong>Email:</strong> {user.email}</p>

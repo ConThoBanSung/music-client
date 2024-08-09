@@ -27,16 +27,14 @@ const App = () => {
     setIsAuthenticated(false);
   };
 
-
-  
-
   return (
     <MusicPlayerProvider>
       <Router>
         <div className="app">
           <header className="header">
             <h1 className="logo">
-              <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>SecGei</Link>
+              <Link to="/" style={{ textDecoration: 'none', color: 'inherit', marginRight: '15 px' }}>SoundTiFy</Link>
+              <Link to="/search">Search</Link>
             </h1>
             <nav className="nav">
               <ul>
@@ -54,11 +52,7 @@ const App = () => {
               </ul>
             </nav>
           </header>
-
           <main className="main">
-            <section className="content">
-              <h2>Welcome to SecGei Music</h2>
-            </section>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />
@@ -71,9 +65,9 @@ const App = () => {
             {/* <PersistentAudioPlayer /> */}
           </main>
 
-          <footer className="footer">
+          {/* <footer className="footer">
             <p>&copy; {new Date().getFullYear()} SecGei. All rights reserved.</p>
-          </footer>
+          </footer> */}
           </div>
           <div className="popup">
             <PersistentAudioPlayer />
