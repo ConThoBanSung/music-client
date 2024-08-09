@@ -28,7 +28,7 @@ const Search = () => {
       thumbnail: result.snippet.thumbnails.default.url,
       url: `https://backend-e154.onrender.com/audio/${result.id.videoId}`
     });
-    navigate(`/audio`);
+    navigate(`/search`);
   };
 
   const addToPlaylist = async (videoId) => {
