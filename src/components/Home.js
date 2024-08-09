@@ -48,7 +48,7 @@ const Home = () => {
       <p>Explore the best music collection.</p>
       <ul className="nav-links">
         <li><Link to="/music-player">Music Player</Link></li>
-        <li><Link to="/upload">Upload</Link></li>
+        <li><Link to="/playlist">Playlist</Link></li>
       </ul>
       <div className="top-songs">
         <h3>Top Songs</h3>
