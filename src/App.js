@@ -1,0 +1,87 @@
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './components/Home';
+import Search from './components/Search';
+import MusicPlayer from './components/MusicPlayer';
+import Profile from './components/Profile';
+import Playlist from './components/Playlist';
+import Login from './components/Login';
+import Register from './components/Register';
+import { MusicPlayerProvider } from './MusicPlayerContext';
+import PersistentAudioPlayer from './PersistentAudioPlayer';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
+import { RecentPlaysProvider } from './components/RecentPlaysContext';
+
+import './App.css';
+
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+  };
+
+  return (
+    <MusicPlayerProvider>
+    <RecentPlaysProvider>
+      <Router>
+        <div className="app">
+          <header className="header">
+            <h1 className="logo">
+              <Link to="/" style={{ textDecoration: 'none', color: 'inherit', marginRight: '15 px' }}>SoundTiFy</Link>
+              <Link to="/search">Search</Link>
+            </h1>
+            <nav className="nav">
+              <ul>
+                {isAuthenticated ? (
+                  <>
+                    <Link to="/profile" className="auth-link">Profile</Link>
+                    <Link to="/" onClick={handleLogout} className="auth-link">Logout</Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/login" className="auth-link">Login</Link>
+                    <Link to="/register" className="auth-link">Register</Link>
+                  </>
+                )}
+              </ul>
+            </nav>
+          </header>
+          <main className="main">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/music-player" element={<MusicPlayer />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/playlist" element={<Playlist />} />
+              <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            </Routes>
+            {/* <PersistentAudioPlayer /> */}
+          </main>
+
+          {/* <footer className="footer">
+            <p>&copy; {new Date().getFullYear()} SecGei. All rights reserved.</p>
+          </footer> */}
+          </div>
+          <div className="popup">
+            <PersistentAudioPlayer />
+            </div>
+      </Router>
+            </RecentPlaysProvider>
+    </MusicPlayerProvider>
+  );
+};
+
+export default App;
