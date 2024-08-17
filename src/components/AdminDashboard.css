@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead tr {
+    background-color: #555;
+    color: white;
+    text-align: left;
+  }
+  
+  tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  td, th {
+    padding: 12px;
+    text-align: left;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
